@@ -8,9 +8,11 @@ with app.app_context():
     # This will delete any existing rows
     # so you can run the seed file multiple times without having duplicate entries in your database
     print("Deleting data...")
-    Pizza.query.delete()
-    Restaurant.query.delete()
-    RestaurantPizza.query.delete()
+    # Pizza.query.delete()
+    # Restaurant.query.delete()
+    # RestaurantPizza.query.delete()
+    db.drop_all()
+    db.create_all()
 
     print("Creating restaurants...")
     shack = Restaurant(name="Karen's Pizza Shack", address='address1')
